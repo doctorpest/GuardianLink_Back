@@ -12,8 +12,9 @@ app.use(cors({
   origin: 'https://backend-api-1ouy.onrender.com', // Remplace par l'URL de ton frontend Render
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
   }));
+
+  app.use(cors(corsOptions));
 app.use(express.json());
 app.post('/test', (req, res) => {
     console.log("✅ Requête reçue sur /test");
